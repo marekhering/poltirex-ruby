@@ -1,0 +1,47 @@
+<%= form_with(model: order, local: true) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :delivery_time %>
+    <%= form.datetime_select :delivery_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure_place_lat %>
+    <%= form.text_field :departure_place_lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure_place_lon %>
+    <%= form.text_field :departure_place_lon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :destination_place_lat %>
+    <%= form.text_field :destination_place_lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :destination_place_lon %>
+    <%= form.text_field :destination_place_lon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payload_weight %>
+    <%= form.text_field :payload_weight %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

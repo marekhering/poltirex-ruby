@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  delivery_time: 2021-12-13 17:43:42
+  departure_place_lat: 1.5
+  departure_place_lon: 1.5
+  destination_place_lat: 1.5
+  destination_place_lon: 1.5
+  payload_weight: 1.5
+
+two:
+  delivery_time: 2021-12-13 17:43:42
+  departure_place_lat: 1.5
+  departure_place_lon: 1.5
+  destination_place_lat: 1.5
+  destination_place_lon: 1.5
+  payload_weight: 1.5

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Delivery time:</strong>
+  <%= @order.delivery_time %>
+</p>
+
+<p>
+  <strong>Departure place lat:</strong>
+  <%= @order.departure_place_lat %>
+</p>
+
+<p>
+  <strong>Departure place lon:</strong>
+  <%= @order.departure_place_lon %>
+</p>
+
+<p>
+  <strong>Destination place lat:</strong>
+  <%= @order.destination_place_lat %>
+</p>
+
+<p>
+  <strong>Destination place lon:</strong>
+  <%= @order.destination_place_lon %>
+</p>
+
+<p>
+  <strong>Payload weight:</strong>
+  <%= @order.payload_weight %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
