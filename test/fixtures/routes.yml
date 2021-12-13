@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_datetime: 2021-12-13 18:39:11
+  end_datetime: 2021-12-13 18:39:11
+  order: one
+
+two:
+  start_datetime: 2021-12-13 18:39:11
+  end_datetime: 2021-12-13 18:39:11
+  order: two
