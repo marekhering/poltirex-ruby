@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_datetime: 2021-12-13 19:54:39
+  end_datetime: 2021-12-13 19:54:39
+  start_place_lat: 1.5
+  start_place_lon: 1.5
+  end_place_lat: 1.5
+  end_place_lon: 1.5
+  route: one
+
+two:
+  start_datetime: 2021-12-13 19:54:39
+  end_datetime: 2021-12-13 19:54:39
+  start_place_lat: 1.5
+  start_place_lon: 1.5
+  end_place_lat: 1.5
+  end_place_lon: 1.5
+  route: two

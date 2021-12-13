@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start datetime:</strong>
+  <%= @stretch.start_datetime %>
+</p>
+
+<p>
+  <strong>End datetime:</strong>
+  <%= @stretch.end_datetime %>
+</p>
+
+<p>
+  <strong>Start place lat:</strong>
+  <%= @stretch.start_place_lat %>
+</p>
+
+<p>
+  <strong>Start place lon:</strong>
+  <%= @stretch.start_place_lon %>
+</p>
+
+<p>
+  <strong>End place lat:</strong>
+  <%= @stretch.end_place_lat %>
+</p>
+
+<p>
+  <strong>End place lon:</strong>
+  <%= @stretch.end_place_lon %>
+</p>
+
+<p>
+  <strong>Route:</strong>
+  <%= @stretch.route %>
+</p>
+
+<%= link_to 'Edit', edit_stretch_path(@stretch) %> |
+<%= link_to 'Back', stretches_path %>
