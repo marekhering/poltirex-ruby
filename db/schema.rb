@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_13_195439) do
+ActiveRecord::Schema.define(version: 2021_12_14_172811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 2021_12_13_195439) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["route_id"], name: "index_stretches_on_route_id"
+  end
+
+  create_table "trucks", force: :cascade do |t|
+    t.float "height"
+    t.float "capacity"
+    t.float "position_lat"
+    t.float "position_lon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "routes", "orders"
