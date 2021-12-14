@@ -12,6 +12,7 @@
       <th>End place lat</th>
       <th>End place lon</th>
       <th>Route</th>
+      <th>Truck</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,6 +27,7 @@
         <td><%= stretch.end_place_lat %></td>
         <td><%= stretch.end_place_lon %></td>
         <td><%= stretch.route %></td>
+        <td><%= stretch.truck %></td>
         <td><%= link_to 'Show', stretch %></td>
         <td><%= link_to 'Edit', edit_stretch_path(stretch) %></td>
         <td><%= link_to 'Destroy', stretch, method: :delete, data: { confirm: 'Are you sure?' } %></td>

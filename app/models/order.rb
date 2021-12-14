@@ -20,9 +20,19 @@ class Order < ApplicationRecord
   end
 
   def create_stretch(route, start_datetime, end_datetime, start_place_lat, start_place_lon, end_place_lat, end_place_lon)
+    closest_distance = Float::INFINITY
+    closest_truck = nil
+
+    Truck.all.each do |truck|
+      distance = Math.sqrt((truck.position_lat - start_place_lat) ** 2 + (truck.position_lon - start_place_lat) ** 2)
+      if closest_distance > distance
+        closest_distance = distance
+        closest_truck = truck
+      end
+    end
+
     route.stretches.create(start_datetime: start_datetime, end_datetime: end_datetime,
                            start_place_lat: start_place_lat, start_place_lon: start_place_lon,
-                           end_place_lat: end_place_lat, end_place_lon: end_place_lon)
+                           end_place_lat: end_place_lat, end_place_lon: end_place_lon, truck_id: closest_truck.id)
   end
-
 end
