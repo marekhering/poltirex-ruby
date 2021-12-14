@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_14_172811) do
+ActiveRecord::Schema.define(version: 2021_12_14_193535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,9 @@ ActiveRecord::Schema.define(version: 2021_12_14_172811) do
     t.bigint "route_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "truck_id"
     t.index ["route_id"], name: "index_stretches_on_route_id"
+    t.index ["truck_id"], name: "index_stretches_on_truck_id"
   end
 
   create_table "trucks", force: :cascade do |t|
@@ -59,4 +61,5 @@ ActiveRecord::Schema.define(version: 2021_12_14_172811) do
 
   add_foreign_key "routes", "orders"
   add_foreign_key "stretches", "routes"
+  add_foreign_key "stretches", "trucks"
 end
