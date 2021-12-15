@@ -12,28 +12,34 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :delivery_time %>
+    <%= form.label :name, "Czas dostarczenia towaru" %>
     <%= form.datetime_select :delivery_time %>
   </div>
 
-  <div class="field">
-    <%= form.label :departure_place_lat %>
-    <%= form.text_field :departure_place_lat %>
+  <div class="field column">
+    <p style="font-size: large; font-weight: bold">Punkt startowy:</p>
+    <div class="field">
+      <%= form.label :name, "Szerokość geograficzna" %>
+      <%= form.text_field :departure_place_lat %>
+    </div>
+
+    <div class="field">
+      <%= form.label :name, "Długość geograficzna" %>
+      <%= form.text_field :departure_place_lon %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :departure_place_lon %>
-    <%= form.text_field :departure_place_lon %>
-  </div>
+  <div class="field column">
+    <p style="font-size: large; font-weight: bold">Punkt docelowy:</p>
+    <div class="field">
+      <%= form.label :name, "Szerokość geograficzna" %>
+      <%= form.text_field :destination_place_lat %>
+    </div>
 
-  <div class="field">
-    <%= form.label :destination_place_lat %>
-    <%= form.text_field :destination_place_lat %>
-  </div>
-
-  <div class="field">
-    <%= form.label :destination_place_lon %>
-    <%= form.text_field :destination_place_lon %>
+    <div class="field">
+      <%= form.label :name, "Długość geograficzna" %>
+      <%= form.text_field :destination_place_lon %>
+    </div>
   </div>
 
   <div class="field">
@@ -42,6 +48,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Stwórz zlecenie"%>
   </div>
 <% end %>
