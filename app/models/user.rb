@@ -3,4 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def client?
+    type == 'Client'
+  end
+
+  def driver?
+    type == 'Driver'
+  end
+
 end
