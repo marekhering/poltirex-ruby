@@ -43,11 +43,11 @@
   </div>
 
   <div class="field">
-    <%= form.label :payload_weight %>
+    <%= form.label :payload_weight, "Waga towaru [kg]" %>
     <%= form.text_field :payload_weight %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Stwórz zlecenie"%>
+    <%= form.submit "Stwórz zlecenie", :class => 'button is-info'%>
   </div>
 <% end %>

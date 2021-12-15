@@ -25,7 +25,7 @@ class Order < ApplicationRecord
     closest_truck = nil
 
     Truck.all.each do |truck|
-      distance = Math.sqrt((truck.position_lat - start_place_lat) ** 2 + (truck.position_lon - start_place_lat) ** 2)
+      distance = Math.sqrt((truck.position_lat - start_place_lat) ** 2 + (truck.position_lon - start_place_lon) ** 2)
       if closest_distance > distance
         closest_distance = distance
         closest_truck = truck

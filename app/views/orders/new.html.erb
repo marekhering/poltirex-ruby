@@ -1,7 +1,12 @@
-<h1 class="title">Stwórz nowe zamówienie</h1>
+<div class="column is-4 is-offset-4 ">
+  <div class="box">
 
-<%= render 'form', order: @order %>
+    <h1 class="title">Stwórz nowe zamówienie</h1>
 
-<%#= link_to 'Back', orders_path %>
+    <%= render 'form', order: @order %>
 
-<%= button_to "Wyloguj", destroy_user_session_path, method: :delete  %>
+    <div style="padding-top: 22px">
+      <%= button_to "Wyloguj", destroy_user_session_path, method: :delete, :class => 'button is-info' %>
+    </div>
+  </div>
+</div>

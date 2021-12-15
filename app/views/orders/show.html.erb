@@ -1,34 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Delivery time:</strong>
-  <%= @order.delivery_time %>
-</p>
-
-<p>
-  <strong>Departure place lat:</strong>
-  <%= @order.departure_place_lat %>
-</p>
-
-<p>
-  <strong>Departure place lon:</strong>
-  <%= @order.departure_place_lon %>
-</p>
-
-<p>
-  <strong>Destination place lat:</strong>
-  <%= @order.destination_place_lat %>
-</p>
-
-<p>
-  <strong>Destination place lon:</strong>
-  <%= @order.destination_place_lon %>
-</p>
-
-<p>
-  <strong>Payload weight:</strong>
-  <%= @order.payload_weight %>
-</p>
+<h1 class="title">Podsumowanie</h1>
+<table class="table is-striped is-bordered" style="margin: auto">
+  <tbody>
+    <tr>
+      <td style="font-weight: bold">Czas dostarczenia towaru</td>
+      <td> <%= @order.delivery_time.strftime('%d/%m/%Y %H:%M') %></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="font-weight: bold">Punkt Startowy</td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold">Szerokość geograficzna</td>
+      <td><%= @order.departure_place_lat %></td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold">Długość geograficzna</td>
+      <td><%= @order.departure_place_lon %></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="font-weight: bold">Punkt docelowy</td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold">Szerokość geograficzna</td>
+      <td><%= @order.destination_place_lat %></td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold">Długość geograficzna</td>
+      <td><%= @order.destination_place_lon %></td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold">Waga towaru [kg]</td>
+      <td><%= @order.payload_weight %></td>
+    </tr>
+  </tbody>
+</table>
 
 <!--<%#= link_to 'Edit', edit_order_path(@order) %> |-->
-<%= link_to 'Stwórz kolejne zlecenie', new_order_path %>
+<div style="padding-top: 22px">
+  <%= link_to 'Stwórz kolejne zlecenie', new_order_path, :class => "button is-info" %>
+</div>
+
+<div style="padding-top: 22px">
+  <%= button_to "Wyloguj", destroy_user_session_path, method: :delete, :class => 'button is-info' %>
+</div>
