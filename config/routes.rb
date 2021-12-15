@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/init_app', to: "home#init_app"
   resources :trucks
   resources :stretches
   resources :orders

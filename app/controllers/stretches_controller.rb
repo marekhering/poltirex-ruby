@@ -1,10 +1,10 @@
 class StretchesController < ApplicationController
   before_action :set_stretch, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, only: %i[new create edit update destroy]
+  before_action :authenticate_user!, only: %i[ index show new create edit update destroy]
 
   # GET /stretches or /stretches.json
   def index
-    @stretches = Stretch.all
+    @stretches = Stretch.where(truck_id: current_user.truck)
   end
 
   # GET /stretches/1 or /stretches/1.json
