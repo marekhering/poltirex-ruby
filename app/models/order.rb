@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
   has_one :route
+  belongs_to :user
   after_create :perform_route
 
   def perform_route

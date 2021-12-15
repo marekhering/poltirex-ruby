@@ -1,5 +1,6 @@
 class StretchesController < ApplicationController
   before_action :set_stretch, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[new create edit update destroy]
 
   # GET /stretches or /stretches.json
   def index
