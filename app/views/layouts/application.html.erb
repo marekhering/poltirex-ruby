@@ -11,22 +11,36 @@
     <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-<body>
-  <section class="hero is-info">
-    <div class="hero-body has-text-centered" style=" padding-bottom: 10px;">
-      <p class = "title" style="font-size:xxx-large;">
-        Poltirex
-      </p>
-      <p class = "subtitle">
-        Marek Hering, Maciej Jabłośnki
-      </p>
-    </div>
-  </section>
+  <body>
+    <section class="hero is-info">
+      <div class="hero-body has-text-centered" style=" padding-bottom: 10px;">
+        <p class = "title" style="font-size:xxx-large;">
+          Poltirex
+        </p>
+        <p class = "subtitle">
+          Marek Hering, Maciej Jabłośnki
+        </p>
+      </div>
 
-  <section class="section has-text-centered">
-    <div>
-      <%= yield %>
-    </div>
-  </section>
+      <div class="level-right" style="padding-right: 30px; padding-bottom: 5px; font-size: large">
+        &nbsp;
+        <% if user_signed_in? %>
+        <span class="icon-text" style="padding-right: 5px">
+          <span class="icon">
+              <i class="fas fa fa-user"></i>
+          </span>
+          <span>Witaj, <%= current_user.name %>!</span>
+        </span>
+
+        <%= button_to "Wyloguj", destroy_user_session_path, method: :delete, :class => 'button is-info' %>
+        <% end %>
+      </div>
+    </section>
+
+    <section class="section has-text-centered">
+      <div>
+        <%= yield %>
+      </div>
+    </section>
   </body>
 </html>
